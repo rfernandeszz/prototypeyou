@@ -1,0 +1,97 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>
+      <ion-item lines="none">
+        <ion-avatar slot="start">
+          <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAAAAACH5BAAAAAAALAAAAAABAAEAAAICTAEAOw==">
+        </ion-avatar>
+        <ion-label>
+          <h2>{{user.name}}</h2>
+          <p>Online</p>
+        </ion-label>
+      </ion-item>
+    </ion-title>
+    <ion-buttons slot="end" (click)="presentActionSheet()">
+      <ion-button>
+        <ion-icon slot="icon-only" name="attach"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <section class="conversation">
+    <div class="message">
+      <div class="day-send">
+        <div class="label-day">
+          <span>Ontem</span>
+        </div>
+      </div>
+      <div class="message-body">
+        <div class="message-main-receiver">
+          <div class="receiver">
+            <div class="message-text">
+              <p>Olá, prazer {{user.name}}</p>
+            </div>
+            <span class="message-time pull-left">
+              {{user.lastmessagetime}}
+            </span>
+          </div>
+        </div>
+      </div>
+      <div class="day-send" *ngIf="messages.length > 0" >
+        <div class="label-day">
+          <span>Hoje</span>
+        </div>
+      </div>
+      <div class="message-body">
+        <div class="message-main-sender" *ngFor="let m of messages">
+          <div class="sender">
+            <div class="message-text">
+              <p *ngIf="m.type == 'text'">{{m.message}}</p>
+              <img *ngIf="m.type == 'image'" width="100%" [src]="m.url">
+            </div>
+            <span class="message-time pull-right">
+              <ion-row align-items-center>
+                <ion-col size="auto" no-padding>
+                  {{m.time}}
+                </ion-col>
+                <ion-col size="auto" no-padding style="margin-left: 5px;">
+                  <ion-icon name="done-all" style="font-size: 14px"></ion-icon>
+                </ion-col>
+              </ion-row>
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</ion-content>
+
+<ion-footer>
+  <ion-toolbar color="ligth">
+    <ion-row align-items-center>
+      <ion-col size="auto">
+        <ion-button fill="clear" no-padding>
+          <ion-icon slot="icon-only" name="happy"></ion-icon>
+        </ion-button>
+      </ion-col>
+      <ion-col>
+        <textarea [(ngModel)]="message"  placeholder="Digite aqui..." #myTextarea rows="1" (keyup)="resize()"></textarea>
+      </ion-col>
+      <ion-col size="auto" *ngIf="message.length == 0">
+        <ion-button fill="clear" no-padding>
+          <ion-icon slot="icon-only" name="mic"></ion-icon>
+        </ion-button>
+      </ion-col>
+      <ion-col size="auto">
+        <ion-button fill="clear" no-padding (click)="sendText()">
+          <ion-icon slot="icon-only" name="paper-plane"></ion-icon>
+        </ion-button>
+      </ion-col>
+    </ion-row>
+  </ion-toolbar>
+</ion-footer>

@@ -1,0 +1,172 @@
+ion-title {
+    padding-left: 0px !important;
+
+    ion-item {
+        --padding-start: 0px !important;
+        --background: var(--ion-color-primary) !important;
+        --color: #fff !important;
+    }
+}
+
+/*Conversation*/
+
+.conversation {
+  padding: 0 0 20px 0 !important;
+  margin: 0 !important;
+  height: 100%;
+}
+
+.message {
+  padding: 0 !important;
+  margin: 0 !important;
+  background-size: cover;
+  overflow-y: auto;
+  height: 100%;
+}
+.message-previous {
+  margin : 0 !important;
+  padding: 0 !important;
+  height: auto;
+  width: 100%;
+}
+.previous {
+  font-size: 15px;
+  text-align: center;
+  padding: 10px !important;
+  cursor: pointer;
+}
+
+.previous a {
+  text-decoration: none;
+  font-weight: 700;
+}
+
+.message-body {
+  margin: 0 !important;
+  padding: 0 !important;
+  width: auto;
+  height: auto;
+}
+
+.message-main-receiver {
+  padding: 3px 16px !important;
+  max-width: 60%;
+}
+
+.message-main-sender {
+  clear: both;
+  padding: 3px 16px !important;
+  margin-left: 40% !important;
+  max-width: 60%;
+}
+
+.message-text {
+  margin: 0 !important;
+  padding: 0px !important;
+  word-wrap:break-word;
+  font-size: 14px;
+  padding-bottom: 0 !important;
+  color: #333;
+
+  p {
+      margin: 10px 0px;
+  }
+}
+
+.message-time {
+  margin: 0 !important;
+  font-size: 12px;
+  text-align: right;
+  color: #9a9a9a;
+
+}
+
+.day-send {
+    display: -webkit-flex;
+    display: flex;
+    -webkit-justify-content: center;
+    justify-content: center;
+
+    .label-day {
+        background-color: rgba(225,245,254,.92);
+        border-radius: 7.5px;
+        box-shadow: 0 1px 0.5px rgba(0,0,0,.1);
+        padding: 5px 12px 6px;
+        margin: 16px 0px;
+        text-align: center;
+        color: #9a9a9a;
+
+        span {
+            font-size: 12px;
+        }
+    }
+}
+
+.pull-left {
+    float: left;
+}
+
+.pull-right {
+    float: right;
+}
+
+.receiver {
+  width: auto !important;
+  padding: 4px 10px 7px !important;
+  border-radius: 10px 10px 10px 0;
+  background: #f1f1fc;
+  word-wrap: break-word;
+  display: inline-block;
+}
+
+.sender {
+  display: block;
+  float: right;
+  width: auto !important;
+  background: #dcf8c6;
+  border-radius: 10px 10px 0 10px;
+  padding: 4px 10px 7px !important;
+  word-wrap: break-word;
+
+  img {
+      margin-top: 6px !important;
+  }
+}
+
+
+/*Footer*/
+ion-footer {
+    ion-button {
+        margin: 0px 8px !important;
+    }
+    textarea {
+        width: 100%;
+        border: 0;
+        border-radius: 0;
+        background: transparent;
+        resize: none;
+        padding-bottom: 0px;
+    }
+    textarea:focus {
+        outline: none;
+    }
+}
+
+/* Action Sheet */
+::ng-deep .camera {
+    ion-icon {
+        color: var(--ion-color-primary) !important;
+    }
+}
+
+::ng-deep .images {
+    ion-icon {
+        color:var(--ion-color-primary) !important;
+    }
+}
+
+::ng-deep .close {
+    ion-icon {
+        color:var(--ion-color-danger) !important;
+    }
+}
